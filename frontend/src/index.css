@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  /* change the default font family to Josefin Sans */
+  --font-sans: "Josefin Sans", sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("/JosefinSans-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}

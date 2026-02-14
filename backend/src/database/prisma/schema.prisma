@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id         String   @id @default(uuid())
+  firstName  String?
+  lastName   String?
+  email      String   @unique
+  password   String?
+  createdAt  DateTime @default(now())
+  provider   Provider @default(LOCAL)
+  providerId String?
+
+  todos Todo[]
+}
+
+model Todo {
+  id        String   @id @default(ulid())
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  completed Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId    String
+}
+
+enum Provider {
+  LOCAL
+  GOOGLE
+  FACEBOOK
+  APPLE
+}

@@ -1,0 +1,27 @@
+backend:
+neon
+postgreSQL
+prisma orm
+typescript
+dotenv
+argon2
+express
+node
+restful api
+Json Web Tokens JWT
+cookie & httponly cookie
+jsonwebtoken
+CORS
+Nodemailer
+MailerSend
+OAuth2
+Google Cloud Platform 
+google-auth-library
+
+
+
+
+frontend:
+vite
+react
+tailwind
