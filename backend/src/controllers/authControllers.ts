@@ -21,7 +21,7 @@ export async function loginController(
     }
 
     //compare the input password with hashed password:
-    const validPass = argon2.verify(user.password, data.password);
+    const validPass = await argon2.verify(user.password, data.password);
 
     if (!validPass) {
       return res.status(401).json({ message: "Invalid email or password" });
@@ -38,6 +38,7 @@ export async function loginController(
 
     res.cookie("jwt", token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 7 * 24 * 60 * 60 * 1000, //7d
     });
@@ -59,6 +60,7 @@ export async function signoutController(req: Request, res: Response) {
   res.cookie("jwt", "", {
     maxAge: 0,
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
     sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   });
 
@@ -104,7 +106,7 @@ export async function signupController(req: Request, res: Response) {
       <p>Enjoy using TODO!</p>
     `;
 
-    await sendEmail(data.email, subject, html);
+    sendEmail(data.email, subject, html);
 
     //JWT
     const secret = process.env.JWT_SECRET;
@@ -117,6 +119,7 @@ export async function signupController(req: Request, res: Response) {
 
     res.cookie("jwt", token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
