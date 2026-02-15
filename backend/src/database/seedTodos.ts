@@ -1,4 +1,4 @@
-import prisma from "./prisma/prismaClient";
+import prisma from "./prisma/prismaClient.js";
 
 export async function createDefaultTodos(userId: string) {
   return prisma.todo.createMany({

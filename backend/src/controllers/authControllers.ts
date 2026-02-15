@@ -1,11 +1,11 @@
 import type { Request, Response } from "express";
-import type { loginType, singUpType } from "../validators/authValidator";
-import prisma from "../database/prisma/prismaClient";
+import type { loginType, singUpType } from "../validators/authValidator.js";
+import prisma from "../database/prisma/prismaClient.js";
 import * as argon2 from "argon2";
 import jwt from "jsonwebtoken";
 
-import { sendEmail } from "../services/emailService";
-import { createDefaultTodos } from "../database/seedTodos";
+import { sendEmail } from "../services/emailService.js";
+import { createDefaultTodos } from "../database/seedTodos.js";
 
 export async function loginController(
   req: Request,

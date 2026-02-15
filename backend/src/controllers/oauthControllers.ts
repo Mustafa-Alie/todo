@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 import type { Request, Response } from "express";
-import prisma from "../database/prisma/prismaClient";
-import { sendEmail } from "../services/emailService";
+import prisma from "../database/prisma/prismaClient.js";
+import { sendEmail } from "../services/emailService.js";
 
 import { OAuth2Client } from "google-auth-library";
-import { createDefaultTodos } from "../database/seedTodos";
+import { createDefaultTodos } from "../database/seedTodos.js";
 
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 

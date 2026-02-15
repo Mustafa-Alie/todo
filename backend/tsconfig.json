@@ -7,7 +7,7 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "esnext",
+    "module": "nodenext",
     "target": "esnext",
     "types": ["node"],
     // For nodejs:
@@ -42,7 +42,7 @@
     "skipLibCheck": true,
 
     //prisma orm recommendations
-    "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true
   }
 }

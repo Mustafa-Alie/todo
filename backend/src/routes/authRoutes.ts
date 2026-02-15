@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { loginSchema, signupSchema } from "../validators/authValidator";
+import { loginSchema, signupSchema } from "../validators/authValidator.js";
 import {
   loginController,
   signoutController,
   signupController,
-} from "../controllers/authControllers";
-import authMiddleware from "../middlewares/authMiddleware";
+} from "../controllers/authControllers.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
-import { googleController } from "../controllers/oauthControllers";
-import prisma from "../database/prisma/prismaClient";
+import { googleController } from "../controllers/oauthControllers.js";
+import prisma from "../database/prisma/prismaClient.js";
 
 const router = Router();
 

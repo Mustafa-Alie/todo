@@ -1,8 +1,8 @@
 import nodemailer from "nodemailer";
-import type SMTPTransport from "nodemailer/lib/smtp-transport";
+
 import "dotenv/config";
 
-const smtpOptions: SMTPTransport.Options = {
+const smtpOptions: any = {
   host: process.env.EMAIL_HOST,
   port: Number(process.env.EMAIL_PORT),
   secure: false,
