@@ -47,7 +47,16 @@ router.patch("/:todoId", authMiddleware, async (req, res) => {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const { todoId } = req.params;
+    const { todoId: todoIdRaw } = req.params;
+
+    if (!todoIdRaw) {
+      return res.status(400).json({ message: "Todo ID is missing" });
+    }
+
+    // Convert to string if it's an array, then assert as string
+    const todoId = (
+      Array.isArray(todoIdRaw) ? todoIdRaw[0] : todoIdRaw
+    ) as string;
 
     const oldStateObj = await prisma.todo.findUnique({
       where: { id: todoId },
@@ -82,7 +91,17 @@ router.delete("/:todoId", authMiddleware, async (req, res) => {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const { todoId } = req.params;
+    const { todoId: todoIdRaw } = req.params;
+
+    // Guard against missing ID
+    if (!todoIdRaw) {
+      return res.status(400).json({ message: "Todo ID is missing" });
+    }
+
+    // Ensure todoId is a string (handles string[] from req.params)
+    const todoId = (
+      Array.isArray(todoIdRaw) ? todoIdRaw[0] : todoIdRaw
+    ) as string;
 
     // Check if the todo exists and belongs to the user
     const existingTodo = await prisma.todo.findUnique({
