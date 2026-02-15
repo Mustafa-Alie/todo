@@ -6,13 +6,14 @@ import { use, useEffect, useState } from "react";
 import Footer from "@/components/UI/Footer";
 import Login from "@/components/UI/Login";
 import Signup from "@/components/UI/Signup";
+import type { todosType } from "@/types/types";
 
 export default function Layout() {
   const { theme } = use(ThemeContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [signInUp, setSignInUp] = useState<"signIn" | "signUp">("signIn");
 
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<todosType[]>([]);
 
   useEffect(() => {
     async function init() {
@@ -39,8 +40,7 @@ export default function Layout() {
         const data = await todosRes.json();
         setTodos(data);
       } catch (err) {
-        //silent
-        // console.error(err);
+        console.error(err);
       }
     }
 

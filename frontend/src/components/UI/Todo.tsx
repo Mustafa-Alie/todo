@@ -12,7 +12,7 @@ export default function Todo({
   setTodos,
 }: {
   onLogout: () => void;
-  todos: todosType;
+  todos: todosType[];
   setTodos: React.Dispatch<React.SetStateAction<todosType[]>>;
 }) {
   // console.log(todos);

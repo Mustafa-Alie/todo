@@ -49,7 +49,7 @@ export async function addTodo(
 
 export async function updateTodoCompletion(
   id: string,
-  setLocalTodos: React.Dispatch<React.SetStateAction<todosType>>,
+  setLocalTodos: React.Dispatch<React.SetStateAction<todosType[]>>,
 ) {
   setLocalTodos((prev) =>
     prev.map((todo) =>

@@ -13,4 +13,4 @@ export type todosType = {
   updatedAt: Date;
   completed: boolean;
   userId: string;
-}[];
+};
