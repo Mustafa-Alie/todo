@@ -1,6 +1,6 @@
 ﻿# Todo App – My First Full Stack Project
 
-![App Preview](./previw.jpg)
+![App Preview](./preview.jpg)
 
 Hello! 
  This is my **first full stack app**. I built it using **Vite, React,  TypeScript, Tailwind** for Frontend.
