@@ -26,21 +26,28 @@ export default function Signup({
 
   return (
     <section
-      className={`relative mx-auto -mt-[40%] max-w-10/12 space-y-2 rounded-lg p-8 shadow-2xl md:-mt-[15%] md:max-w-8/12 lg:max-w-4/12 ${theme === "light" ? "bg-white text-gray-700 shadow-gray-300" : "bg-slate-800 text-gray-300"}`}
+      className={`relative mx-auto -mt-[40%] max-w-10/12 space-y-2 rounded-lg p-8 shadow-2xl md:-mt-[15%] md:max-w-8/12 lg:max-w-4/12 ${
+        theme === "light"
+          ? "bg-white text-gray-700 shadow-gray-300"
+          : "bg-slate-800 text-gray-300"
+      }`}
     >
       <h1 className="mb-4 text-center text-2xl font-semibold">
         Create an account
       </h1>
 
+      {/* ================= Social login section (future feature) ================= */}
+      {/*
       <div
-        className={`flex gap-3 px-4 *:flex *:grow *:cursor-pointer *:items-center *:justify-center *:rounded-lg *:border *:border-gray-300 *:py-2 ${theme === "light" ? "*:hover:border-gray-400 *:hover:bg-gray-50" : "*:hover:border-gray-200 *:hover:bg-gray-600"}`}
+        className={`flex gap-3 px-4 *:flex *:grow *:cursor-pointer *:items-center *:justify-center *:rounded-lg *:border *:border-gray-300 *:py-2 ${
+          theme === "light"
+            ? "*:hover:border-gray-400 *:hover:bg-gray-50"
+            : "*:hover:border-gray-200 *:hover:bg-gray-600"
+        }`}
       >
-
-        {/*to be config later
-        
         <button type="button" onClick={handleGoogle}>
           <img
-            alt=""
+            alt="Google login"
             src={theme === "light" ? googleIcon : googleWhite}
             className="h-4 w-4"
           />
@@ -52,8 +59,8 @@ export default function Signup({
         <span className="py-3 text-xs text-gray-400 uppercase">Or</span>
         <span className="w-2/5 border-t border-gray-300"></span>
       </div>
-
       */}
+      {/* ======================================================================== */}
 
       <form
         className="space-y-4"
@@ -64,10 +71,11 @@ export default function Signup({
             setInvalid,
             onLogin,
             signupSchema,
-            "signup",
+            "signup"
           );
         }}
       >
+        {/* Name fields */}
         <div className="flex gap-4">
           <div>
             <label className="flex items-center justify-between">
@@ -81,9 +89,9 @@ export default function Signup({
               maxLength={20}
               name="firstName"
               value={formData.firstName}
-              onChange={(e) => {
-                setFormData({ ...formData, firstName: e.target.value });
-              }}
+              onChange={(e) =>
+                setFormData({ ...formData, firstName: e.target.value })
+              }
               className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
               placeholder="Adam"
             />
@@ -101,14 +109,16 @@ export default function Signup({
               name="lastName"
               maxLength={20}
               value={formData.lastName}
-              onChange={(e) => {
-                setFormData({ ...formData, lastName: e.target.value });
-              }}
+              onChange={(e) =>
+                setFormData({ ...formData, lastName: e.target.value })
+              }
               className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
               placeholder="Smith"
             />
           </div>
         </div>
+
+        {/* Email */}
         <label className="text-sm font-medium">Email address</label>
         <input
           type="email"
@@ -121,9 +131,12 @@ export default function Signup({
             setInvalid(false);
             setFormData({ ...formData, email: e.target.value });
           }}
-          className={`mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none ${invalid ? "outline-2 outline-red-500" : "outline-0"}`}
+          className={`mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none ${
+            invalid ? "outline-2 outline-red-500" : "outline-0"
+          }`}
         />
 
+        {/* Password */}
         <label className="text-sm font-medium">Password</label>
         <input
           type="password"
@@ -136,9 +149,12 @@ export default function Signup({
             setInvalid(false);
             setFormData({ ...formData, password: e.target.value });
           }}
-          className={`mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none ${invalid ? "outline-2 outline-red-500" : "outline-0"}`}
+          className={`mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none ${
+            invalid ? "outline-2 outline-red-500" : "outline-0"
+          }`}
         />
 
+        {/* Submit */}
         <button
           type="submit"
           className="my-2 w-full cursor-pointer rounded-md bg-gray-500 py-2 font-medium text-white transition hover:bg-gray-600"
@@ -147,12 +163,16 @@ export default function Signup({
         </button>
       </form>
 
+      {/* Login link */}
       <p className="pt-2 text-center text-sm text-gray-400">
         Already have an account?
         <a
           onClick={onSignIn}
-          href=""
-          className={`ps-2 font-semibold hover:underline ${theme === "light" ? "text-gray-600 hover:text-gray-900" : "text-gray-300 hover:text-gray-100"}`}
+          className={`ps-2 font-semibold hover:underline cursor-pointer ${
+            theme === "light"
+              ? "text-gray-600 hover:text-gray-900"
+              : "text-gray-300 hover:text-gray-100"
+          }`}
         >
           Sign in
         </a>
