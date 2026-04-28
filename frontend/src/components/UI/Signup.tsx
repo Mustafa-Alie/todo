@@ -6,6 +6,10 @@ import googleWhite from "@/assets/images/google-white.svg";
 import { signupSchema } from "@/validators/zod.schema";
 import { handleSubmitForm, handleGoogle } from "@/services/authServices";
 
+const _googleIcon = googleIcon;
+const _googleWhite = googleWhite;
+const _handleGoogle = handleGoogle;
+
 export default function Signup({
   onLogin,
   onSignIn,
