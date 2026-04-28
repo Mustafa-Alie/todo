@@ -1,5 +1,5 @@
-import googleIcon from "@/assets/images/google.svg";
-import googleWhite from "@/assets/images/google-white.svg";
+// import googleIcon from "@/assets/images/google.svg";
+// import googleWhite from "@/assets/images/google-white.svg";
 import errorIcon from "@/assets/images/error.svg";
 
 import { loginSchema } from "@/validators/zod.schema";
@@ -8,7 +8,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 import { use } from "react";
 import { useState } from "react";
 
-import { handleSubmitForm, handleGoogle } from "@/services/authServices";
+import { handleSubmitForm } from "@/services/authServices";
 
 export default function Login({
   onLogin,
