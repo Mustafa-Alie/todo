@@ -35,6 +35,9 @@ export default function Signup({
       <div
         className={`flex gap-3 px-4 *:flex *:grow *:cursor-pointer *:items-center *:justify-center *:rounded-lg *:border *:border-gray-300 *:py-2 ${theme === "light" ? "*:hover:border-gray-400 *:hover:bg-gray-50" : "*:hover:border-gray-200 *:hover:bg-gray-600"}`}
       >
+
+        {/*to be config later
+        
         <button type="button" onClick={handleGoogle}>
           <img
             alt=""
@@ -49,6 +52,8 @@ export default function Signup({
         <span className="py-3 text-xs text-gray-400 uppercase">Or</span>
         <span className="w-2/5 border-t border-gray-300"></span>
       </div>
+
+      */}
 
       <form
         className="space-y-4"
