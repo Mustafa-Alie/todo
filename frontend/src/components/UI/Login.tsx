@@ -87,26 +87,34 @@ export default function Login({
           Sign in
         </button>
       </form>
+      
+{/*
+  to be config later
 
-      <div className="flex items-center justify-center space-x-2">
-        <span className="w-1/5 border-t border-gray-300"></span>
-        <span className="py-3 text-xs text-gray-400 uppercase">
-          Or continue with
-        </span>
-        <span className="w-1/5 border-t border-gray-300"></span>
-      </div>
+  <div className="flex items-center justify-center space-x-2">
+    <span className="w-1/5 border-t border-gray-300"></span>
+    <span className="py-3 text-xs text-gray-400 uppercase">
+      Or continue with
+    </span>
+    <span className="w-1/5 border-t border-gray-300"></span>
+  </div>
 
-      <div
-        className={`flex gap-3 px-4 *:flex *:grow *:cursor-pointer *:items-center *:justify-center *:rounded-lg *:border *:border-gray-300 *:py-2 ${theme === "light" ? "*:hover:border-gray-400 *:hover:bg-gray-50" : "*:hover:border-gray-200 *:hover:bg-gray-600"}`}
-      >
-        <button type="button" onClick={handleGoogle}>
-          <img
-            alt=""
-            src={theme === "light" ? googleIcon : googleWhite}
-            className="h-4 w-4"
-          />
-        </button>
-      </div>
+  <div
+    className={`flex gap-3 px-4 *:flex *:grow *:cursor-pointer *:items-center *:justify-center *:rounded-lg *:border *:border-gray-300 *:py-2 ${
+      theme === "light"
+        ? "*:hover:border-gray-400 *:hover:bg-gray-50"
+        : "*:hover:border-gray-200 *:hover:bg-gray-600"
+    }`}
+  >
+    <button type="button" onClick={handleGoogle}>
+      <img
+        alt=""
+        src={theme === "light" ? googleIcon : googleWhite}
+        className="h-4 w-4"
+      />
+    </button>
+  </div>
+*/}
 
       <p className="pt-4 text-center text-sm text-gray-400">
         Don’t have an account?
