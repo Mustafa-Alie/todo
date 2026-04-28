@@ -1,14 +1,11 @@
 import { ThemeContext } from "@/context/ThemeContext";
 import { use } from "react";
 import { useState } from "react";
-import googleIcon from "@/assets/images/google.svg";
-import googleWhite from "@/assets/images/google-white.svg";
+// import googleIcon from "@/assets/images/google.svg";
+// import googleWhite from "@/assets/images/google-white.svg";
 import { signupSchema } from "@/validators/zod.schema";
-import { handleSubmitForm, handleGoogle } from "@/services/authServices";
+import { handleSubmitForm } from "@/services/authServices";
 
-const _googleIcon = googleIcon;
-const _googleWhite = googleWhite;
-const _handleGoogle = handleGoogle;
 
 export default function Signup({
   onLogin,
